@@ -1,5 +1,7 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
+import StatsTablet from './StatsTablet';
+import './stats-tablet.css';
 type Tab='Übersicht'|'Kampf'|'Zauber'|'Inventar'|'Notizen';
 const abilities=[['STÄ',11,0],['GES',14,2],['KON',16,3],['INT',13,1],['WEI',9,-1],['CHA',15,2]];
 const skills=[['Akrobatik','+2'],['Mit Tieren umgehen','−1'],['Arkane Kunde','+3 ★'],['Athletik','+2'],['Täuschen','+2'],['Geschichte','+1'],['Motiv erkennen','+1 ★'],['Einschüchtern','+2'],['Nachforschungen','+1'],['Heilkunde','−1'],['Naturkunde','+1'],['Wahrnehmung','−1'],['Auftreten','+2'],['Überzeugen','+4 ★'],['Religion','+1'],['Fingerfertigkeit','+2'],['Heimlichkeit','+2'],['Überleben','−1']];
@@ -26,6 +28,7 @@ export default function Home(){
  useEffect(()=>{if(ready)localStorage.setItem('thartos-state',JSON.stringify({hp,tempHp,slots,dark}))},[hp,tempHp,slots,dark,ready]);
  const filtered=useMemo(()=>inventory.filter(x=>x.toLowerCase().includes(search.toLowerCase())),[search]);
  if(landing)return <Landing onNavigate={(next)=>{setTab(next);setLanding(false)}}/>;
+ if(tab==='Übersicht')return <StatsTablet onBack={()=>setLanding(true)} onNavigate={(next)=>setTab(next)}/>;
  return <main className={dark?'app dark':'app'}><header className="topbar"><button className="brand" onClick={()=>setTab('Übersicht')} aria-label="Zur Übersicht"><span className="brandMark">T</span><span><strong>Thartos</strong><small>Charakterbogen</small></span></button><nav aria-label="Hauptnavigation">{(['Übersicht','Kampf','Zauber','Inventar','Notizen'] as Tab[]).map(x=><button key={x} className={tab===x?'active':''} onClick={()=>setTab(x)}>{x}</button>)}</nav><button className="iconButton" onClick={()=>setDark(!dark)} aria-label="Farbschema wechseln">{dark?'☀':'☾'}</button></header>
  <section className="hero"><div><p className="eyebrow">MENSCH · PALADIN III</p><h1>Thartos <span className="uncertain">?</span></h1><p className="subline">Neutral / „Rebel Moral“ <span className="uncertain">unklar</span> · Spieler: Tobi</p></div><div className="heroStats"><Stat label="Rüstung" value="16"/><Stat label="Initiative" value="+2"/><Stat label="Tempo" value="10?"/><Stat label="Übung" value="+2"/></div></section>
  {tab==='Übersicht'&&<Overview {...{hp,setHp,tempHp,setTempHp,slots,setSlots}}/>}{tab==='Kampf'&&<Combat {...{hp,setHp,tempHp,setTempHp}}/>}{tab==='Zauber'&&<Spells {...{slots,setSlots}}/>}{tab==='Inventar'&&<Inventory search={search} setSearch={setSearch} items={filtered}/>} {tab==='Notizen'&&<Notes/>}<footer><span>Aus Fotos & Live Photo übertragen</span><span><i/> Unklare Abschrift bewusst markiert</span></footer></main>}
