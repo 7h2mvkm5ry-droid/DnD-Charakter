@@ -29,7 +29,6 @@ export default function LandingTablet({ onNavigate }: { onNavigate: (tab: Tab) =
     <img className="landingArt" src="/thartos-startseite.png" alt="Thartos kämpft in einer nächtlichen Stadt gegen Untote" />
     <div className="landingVeil" />
     <header className="landingNav">
-      <div className="landingTitle"><b>Thartos – Paladin</b></div>
       <div className="referenceTabsFrame">
         <img src="/thartos-startseite.png" alt="" aria-hidden="true" />
         <nav className="tabletLandingTabs" aria-label="Charakterbereiche">

@@ -1,0 +1,87 @@
+.tabletLanding header.landingNav .referenceTabsFrame {
+  top: 12px !important;
+  width: min(63vw, 680px) !important;
+  opacity: .82;
+  transition: opacity .2s ease, filter .2s ease;
+}
+.tabletLanding header.landingNav .referenceTabsFrame:hover,
+.tabletLanding header.landingNav .referenceTabsFrame:focus-within { opacity: .96; }
+.tabletLanding .landingArt,
+.tabletLanding .landingVeil { inset-block-start: 0 !important; top: 0 !important; }
+.tabletLanding .landingArt { height: 100% !important; }
+.tabletLanding .storyArea { inset-block-start: 0 !important; top: 0 !important; }
+
+.landingIdentity h1,
+.identityFacts,
+.identityLore {
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+  text-shadow: 0 1px #000, 0 0 8px #9d682533;
+}
+.identityFacts { font-variant: small-caps; letter-spacing: .035em; }
+.identityLore { letter-spacing: .025em; }
+
+.statsFantasyNav {
+  position: relative;
+  z-index: 8;
+  height: 126px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg,#02080bf0,#02080bbb);
+  border-bottom: 1px solid #855d2a;
+  box-shadow: 0 8px 24px #000c;
+}
+.statsBack {
+  position: absolute;
+  z-index: 3;
+  left: 14px;
+  top: 50%;
+  width: 44px;
+  height: 58px;
+  transform: translateY(-50%);
+  border: 1px solid #a27234;
+  background: #071116d9;
+  color: #e0b96e;
+  font: 38px/1 Georgia;
+  cursor: pointer;
+  box-shadow: inset 0 0 12px #000;
+}
+.statsReferenceTabsFrame {
+  position: relative;
+  width: min(68vw,680px);
+  aspect-ratio: 5.95/1;
+  overflow: hidden;
+  opacity: .88;
+  filter: drop-shadow(0 6px 9px #000d);
+}
+.statsReferenceTabsFrame>img {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  transform: translateY(-9.05%);
+  pointer-events: none;
+}
+.statsReferenceTabsFrame nav {
+  position: absolute;
+  inset: 0 3.6%;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap: .55%;
+}
+.statsReferenceTabsFrame nav button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.statsReferenceTabsFrame nav button:hover,
+.statsReferenceTabsFrame nav button:focus-visible,
+.statsReferenceTabsFrame nav button.active {
+  background: #e9b14a20;
+  box-shadow: inset 0 0 0 2px #f0bd5a,inset 0 0 22px #d5913144;
+  clip-path: polygon(7px 0,calc(100% - 7px) 0,100% 7px,100% calc(100% - 7px),calc(100% - 7px) 100%,7px 100%,0 calc(100% - 7px),0 7px);
+}
+@media(max-width:1050px){
+  .tabletLanding header.landingNav .referenceTabsFrame{top:9px!important;width:min(66vw,590px)!important}
+  .statsFantasyNav{height:112px}.statsReferenceTabsFrame{width:min(70vw,590px)}
+}
