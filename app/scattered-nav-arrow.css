@@ -15,47 +15,25 @@
 .combatPointer{
   left:4.25%;
   bottom:calc(3.2% + 174px);
-  width:92px;
-  height:166px;
+  width:118px;
+  height:174px;
   min-height:0;
   padding:0;
   border:0;
   border-radius:0;
-  background:
-    radial-gradient(circle,#fffbd0 0 4px,#ffe829 4.5px 6px,transparent 7px) 4px 3px/22px 22px,
-    linear-gradient(90deg,#8f0707,#ff1818 48%,#9b0707);
-  box-shadow:0 0 7px #fff37d,0 0 20px #ff1e0a,0 0 0 3px #510305;
-  clip-path:polygon(12% 0,88% 0,88% 55%,100% 55%,50% 100%,0 55%,12% 55%);
-  transform:rotate(-3deg);
+  background:none;
+  box-shadow:none;
+  clip-path:polygon(13% 0,87% 0,87% 63%,100% 63%,50% 100%,0 63%,13% 63%);
+  transform:none;
+  animation:none;
+  filter:drop-shadow(0 7px 8px #000d) drop-shadow(0 0 4px #a76c2788);
 }
-.combatPointer::before{
-  content:'';
-  position:absolute;
-  inset:5px;
-  background:radial-gradient(circle,#fff 0 3px,#ffe82e 4px 5px,transparent 6px) 0 0/22px 22px;
-  clip-path:inherit;
-  filter:drop-shadow(0 0 4px #fff46a);
-}
+.combatPointer::before{content:none}
 .combatPointer::after{content:none}
-.combatPointer strong{
-  position:relative;
-  z-index:2;
-  display:grid;
-  place-items:center;
-  width:76px;
-  min-height:42px;
-  margin-top:-28px;
-  border:2px solid #ffd84b;
-  background:#bc090cee;
-  color:#fff8c1;
-  font:900 16px/1 Arial,sans-serif;
-  letter-spacing:.08em;
-  text-shadow:0 0 5px #fff,0 0 10px #ffe83c;
-}
+.combatPointer img{display:block;width:100%;height:100%;object-fit:fill}
 
 @media(max-width:1050px){
   .tabletLanding .landingNav>.floatingFantasyNav{left:2%;right:2%;top:8px}
   .statsFantasyNav>.floatingFantasyNav{width:calc(100% - 120px);margin-left:48px}
-  .combatPointer{left:4%;bottom:calc(3.2% + 160px);width:78px;height:142px}
-  .combatPointer strong{width:64px;min-height:36px;font-size:13px;margin-top:-24px}
+  .combatPointer{left:4%;bottom:calc(3.2% + 160px);width:100px;height:148px}
 }

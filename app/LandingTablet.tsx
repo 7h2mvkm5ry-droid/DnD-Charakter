@@ -28,7 +28,7 @@ export default function LandingTablet({ onNavigate }: { onNavigate: (tab: Tab) =
       <FantasyNav onSelect={(target)=>onNavigate(target==='Stats'?'Übersicht':target)} />
     </header>
     <button className="storyArea" onClick={() => onNavigate('Notizen')} aria-label="Abenteuer und Story öffnen"><span>Abenteuer öffnen</span></button>
-    <div className="combatPointer" aria-hidden="true"><strong>KAMPF</strong></div>
+    <div className="combatPointer" aria-hidden="true"><img src="/kampf-pfeil.png" alt="" /></div>
     <section className="landingFooter" aria-label="Charakter und Rast">
       <div className="fightLaunch">
         <button className="portraitMedallion" onClick={() => onNavigate('Kampf')} aria-label="In den Kampf"><img src="/thartos-startseite.png" alt="Thartos" /><span aria-hidden="true">⚔</span></button>
