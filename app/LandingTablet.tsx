@@ -3,13 +3,9 @@
 import { useState } from 'react';
 import './landing-reference-tabs.css';
 import './landing-overlay-nav.css';
+import FantasyNav from './FantasyNav';
 
 type Tab = 'Übersicht' | 'Kampf' | 'Zauber' | 'Inventar' | 'Notizen';
-
-const tabs: [string, string, Tab][] = [
-  ['♜', 'Stats', 'Übersicht'], ['⚔', 'Waffen', 'Kampf'], ['♨', 'Items', 'Inventar'],
-  ['✧', 'Zauber', 'Zauber'], ['✋', 'Können', 'Übersicht'], ['▤', 'Story', 'Notizen'],
-];
 
 export default function LandingTablet({ onNavigate }: { onNavigate: (tab: Tab) => void }) {
   const [notice, setNotice] = useState('');
@@ -29,15 +25,10 @@ export default function LandingTablet({ onNavigate }: { onNavigate: (tab: Tab) =
     <img className="landingArt" src="/thartos-startseite.png" alt="Thartos kämpft in einer nächtlichen Stadt gegen Untote" />
     <div className="landingVeil" />
     <header className="landingNav">
-      <div className="referenceTabsFrame">
-        <img src="/thartos-startseite.png" alt="" aria-hidden="true" />
-        <nav className="tabletLandingTabs" aria-label="Charakterbereiche">
-          {tabs.map(([icon, label, target]) => <button key={label} onClick={() => onNavigate(target)} aria-label={label}><i aria-hidden="true">{icon}</i><span>{label}</span></button>)}
-        </nav>
-      </div>
+      <FantasyNav onSelect={(target)=>onNavigate(target==='Stats'?'Übersicht':target)} />
     </header>
     <button className="storyArea" onClick={() => onNavigate('Notizen')} aria-label="Abenteuer und Story öffnen"><span>Abenteuer öffnen</span></button>
-    <div className="combatPointer" aria-hidden="true"><strong>IN DEN<br />KAMPF</strong><i>▼</i></div>
+    <div className="combatPointer" aria-hidden="true"><strong>KAMPF</strong></div>
     <section className="landingFooter" aria-label="Charakter und Rast">
       <div className="fightLaunch">
         <button className="portraitMedallion" onClick={() => onNavigate('Kampf')} aria-label="In den Kampf"><img src="/thartos-startseite.png" alt="Thartos" /><span aria-hidden="true">⚔</span></button>

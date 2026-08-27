@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import './unified-fantasy-nav.css';
+import FantasyNav from './FantasyNav';
 
 type Values=Record<string,number>;
 type Nav='Kampf'|'Inventar'|'Zauber'|'Übersicht'|'Notizen';
@@ -24,7 +25,7 @@ export default function StatsTablet({onBack,onNavigate}:{onBack:()=>void;onNavig
  const endTempPress=()=>{if(tempTimer.current)clearTimeout(tempTimer.current);if(!tempLong.current)reduceTemp()};
  const hpPercent=useMemo(()=>Math.max(0,Math.min(100,values.hp/Math.max(1,values.hpMax)*100)),[values.hp,values.hpMax]);
  return <main className="tabletStats">
-  <header className="statsFantasyNav"><button className="statsBack" onClick={onBack} aria-label="Zur Startseite">‹</button><div className="statsReferenceTabsFrame"><img src="/thartos-startseite.png" alt="" aria-hidden="true"/><nav aria-label="Charakterbereiche"><button aria-label="Stats" className="active"/><button aria-label="Waffen" onClick={()=>onNavigate('Kampf')}/><button aria-label="Items" onClick={()=>onNavigate('Inventar')}/><button aria-label="Zauber" onClick={()=>onNavigate('Zauber')}/><button aria-label="Können" onClick={()=>onNavigate('Übersicht')}/><button aria-label="Story" onClick={()=>onNavigate('Notizen')}/></nav></div></header>
+  <header className="statsFantasyNav"><button className="statsBack" onClick={onBack} aria-label="Zur Startseite">‹</button><FantasyNav active="Stats" onSelect={(target)=>{if(target==='Stats')return;onNavigate(target)}}/></header>
   <section className="tabletBody"><h1>THARTOS</h1><div className="titleRule"><span/>STATS<span/></div>
    <div className="abilityGrid">{abilityMeta.map(([key,label,,icon,tone])=><button className={`abilityCard ${tone}`} key={key} onClick={()=>open(key,label)}><span className="abilityIcon">{icon}</span><span className="abilityName">{label}</span><strong>{signed(mod(values[key]))}</strong><em>{values[key]}</em><small>Tippen zum Ändern</small><i>›</i></button>)}</div>
    <div className="combatStrip"><SmallStat icon="✥" label="Rüstungsklasse" value={values.ac} onClick={()=>open('ac','Rüstungsklasse')}/><SmallStat icon="ϟ" label="Initiative" value={signed(values.initiative)} onClick={()=>open('initiative','Initiative')}/><SmallStat icon="♟" label="Bewegung" value={values.speed} onClick={()=>open('speed','Bewegung')}/>
