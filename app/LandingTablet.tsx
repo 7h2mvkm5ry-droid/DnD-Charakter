@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import './landing-reference-tabs.css';
+import './landing-overlay-nav.css';
 
 type Tab = 'Übersicht' | 'Kampf' | 'Zauber' | 'Inventar' | 'Notizen';
 
@@ -37,8 +38,11 @@ export default function LandingTablet({ onNavigate }: { onNavigate: (tab: Tab) =
       </div>
     </header>
     <button className="storyArea" onClick={() => onNavigate('Notizen')} aria-label="Abenteuer und Story öffnen"><span>Abenteuer öffnen</span></button>
+    <div className="combatPointer" aria-hidden="true"><strong>IN DEN<br />KAMPF</strong><i>▼</i></div>
     <section className="landingFooter" aria-label="Charakter und Rast">
-      <div className="portraitMedallion" aria-hidden="true"><img src="/thartos-startseite.png" alt="" /><span>⚔</span></div>
+      <div className="fightLaunch">
+        <button className="portraitMedallion" onClick={() => onNavigate('Kampf')} aria-label="In den Kampf"><img src="/thartos-startseite.png" alt="Thartos" /><span aria-hidden="true">⚔</span></button>
+      </div>
       <div className="landingIdentity">
         <h1>THARTOS</h1>
         <div className="identityFacts"><p><i>♙</i> Alter 22</p><p><i>♜</i> Mensch-Paladin</p><p><i>✥</i> Stufe 3</p></div>
