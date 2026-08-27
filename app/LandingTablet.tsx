@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import './landing-reference-tabs.css';
 
 type Tab = 'Übersicht' | 'Kampf' | 'Zauber' | 'Inventar' | 'Notizen';
 
@@ -28,9 +29,12 @@ export default function LandingTablet({ onNavigate }: { onNavigate: (tab: Tab) =
     <div className="landingVeil" />
     <header className="landingNav">
       <div className="landingTitle"><b>Thartos – Paladin</b></div>
-      <nav className="tabletLandingTabs" aria-label="Charakterbereiche">
-        {tabs.map(([icon, label, target]) => <button key={label} onClick={() => onNavigate(target)}><i aria-hidden="true">{icon}</i><span>{label}</span></button>)}
-      </nav>
+      <div className="referenceTabsFrame">
+        <img src="/thartos-startseite.png" alt="" aria-hidden="true" />
+        <nav className="tabletLandingTabs" aria-label="Charakterbereiche">
+          {tabs.map(([icon, label, target]) => <button key={label} onClick={() => onNavigate(target)} aria-label={label}><i aria-hidden="true">{icon}</i><span>{label}</span></button>)}
+        </nav>
+      </div>
     </header>
     <button className="storyArea" onClick={() => onNavigate('Notizen')} aria-label="Abenteuer und Story öffnen"><span>Abenteuer öffnen</span></button>
     <section className="landingFooter" aria-label="Charakter und Rast">

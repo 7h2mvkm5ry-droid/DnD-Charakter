@@ -1,0 +1,72 @@
+.tabletLanding .landingNav {
+  height: 238px;
+  padding: 0 0 10px;
+}
+
+.referenceTabsFrame {
+  position: relative;
+  width: min(94vw, 1060px);
+  aspect-ratio: 5.95 / 1;
+  margin: 0 auto;
+  overflow: hidden;
+  filter: drop-shadow(0 8px 12px #000c);
+}
+
+.referenceTabsFrame > img {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  transform: translateY(-9.05%);
+  pointer-events: none;
+}
+
+.tabletLanding .referenceTabsFrame .tabletLandingTabs {
+  position: absolute;
+  inset: 0 3.6%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: .55%;
+}
+
+.tabletLanding .referenceTabsFrame .tabletLandingTabs button {
+  display: block;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  clip-path: none;
+  color: transparent;
+  cursor: pointer;
+}
+
+.tabletLanding .referenceTabsFrame .tabletLandingTabs button::before,
+.tabletLanding .referenceTabsFrame .tabletLandingTabs button::after,
+.tabletLanding .referenceTabsFrame .tabletLandingTabs button i,
+.tabletLanding .referenceTabsFrame .tabletLandingTabs button span {
+  display: none;
+}
+
+.tabletLanding .referenceTabsFrame .tabletLandingTabs button:hover,
+.tabletLanding .referenceTabsFrame .tabletLandingTabs button:focus-visible {
+  border: 0;
+  background: #e9b14a20;
+  box-shadow: inset 0 0 0 2px #f0bd5a, inset 0 0 24px #d5913144;
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
+}
+
+.tabletLanding .landingArt,
+.tabletLanding .landingVeil { inset-block-start: 238px; }
+.tabletLanding .landingArt { height: calc(100% - 238px); }
+.tabletLanding .storyArea { inset-block-start: 239px; }
+
+@media (max-width: 1050px) {
+  .tabletLanding .landingNav { height: 196px; }
+  .referenceTabsFrame { width: min(92vw, 850px); }
+  .tabletLanding .landingArt,
+  .tabletLanding .landingVeil { inset-block-start: 196px; }
+  .tabletLanding .landingArt { height: calc(100% - 196px); }
+  .tabletLanding .storyArea { inset-block-start: 197px; }
+}
