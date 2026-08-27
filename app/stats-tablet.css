@@ -23,17 +23,19 @@
 .smallStat{min-width:0;grid-template-columns:56px minmax(0,1fr);grid-template-rows:42px 1fr;padding:7px 12px 7px 8px;text-align:left}
 .smallStat>span{font-size:2.35em;text-align:center}
 .smallStat label{min-width:0;padding:4px 22px 0 0;align-self:start;font-size:.78em;line-height:1.12;letter-spacing:.025em;overflow-wrap:anywhere}
+.smallStat label.noWrap{white-space:nowrap;overflow-wrap:normal;font-size:.7em;letter-spacing:0}
 .smallStat strong{align-self:center;font-size:2.35em;text-align:left;line-height:1}
 .smallStat>i{right:8px;top:50%;transform:translateY(-50%);font-size:1.7em}
 
-.hpPanel{min-width:0;padding:12px 16px}
+.hpPanel{min-width:0;padding:12px 16px;cursor:pointer;font:inherit;text-align:left;appearance:none}
 .heart{flex:0 0 auto;font-size:3.25em;margin-right:14px}
-.hpPanel>div{min-width:0}
-.hpPanel label,.tempPanel label{font-size:.78em;line-height:1.14;letter-spacing:.035em}
-.hpPanel button{display:flex;align-items:baseline;gap:7px;min-height:43px;white-space:nowrap}
-.hpPanel button strong{font-size:2.25em;line-height:1}
-.hpPanel button span{font-size:1.05em;color:#a98b63}
-.hpTrack{margin-top:4px}
+.hpContent{display:block;min-width:0;flex:1}
+.hpLabel{display:block;text-transform:uppercase;color:#d5b079;font-size:.78em;line-height:1.14;letter-spacing:.035em}
+.tempPanel label{font-size:.78em;line-height:1.14;letter-spacing:.035em}
+.hpValue{display:flex;align-items:baseline;gap:7px;min-height:43px;white-space:nowrap;color:#d6b17b}
+.hpValue strong{font-size:2.25em;font-weight:400;line-height:1}
+.hpValue>span{font-size:1.05em;color:#a98b63}
+.hpTrack{display:block;margin-top:4px}
 .tempPanel{grid-template-columns:50px minmax(0,1fr);grid-template-rows:38px 36px 27px;padding:6px 12px 6px 6px}
 .tempPanel>span{font-size:2.2em}
 .tempPanel label{padding-top:6px;overflow-wrap:anywhere}
@@ -49,9 +51,13 @@
 
 .listPanel{padding:0 14px 10px;overflow:hidden}
 .listPanel h2{padding:11px 8px 9px;letter-spacing:.06em}
-.listPanel button{min-width:0;padding:0 5px;column-gap:5px}
+.listPanel button{min-width:0;height:40px;padding:0 6px;column-gap:6px;font-size:1.08em}
 .listPanel button span{min-width:0;line-height:1.08}
-.skillPanel button{grid-template-columns:minmax(0,1fr) 42px 24px;font-size:.92em}
+.listPanel button strong{font-size:1.1em}
+.listPanel button em{font-size:1.05em}
+.listPanel footer{font-size:1.02em}
+.skillPanel>div{grid-template-rows:repeat(6,40px)}
+.skillPanel button{grid-template-columns:minmax(0,1fr) 46px 26px;font-size:1em}
 .skillPanel button span{padding-right:4px}
 
 @media(max-width:1050px){
