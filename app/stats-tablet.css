@@ -4,3 +4,59 @@
 .lowerGrid{display:grid;grid-template-columns:1.15fr 2.85fr;gap:12px;margin-top:12px}.listPanel{border:1px solid #79532a;background:#061117;box-shadow:inset 0 0 22px #000;padding:0 18px 10px}.listPanel h2{text-align:center;font-size:1.15em;text-transform:uppercase;font-weight:400;border-bottom:1px solid #624621;margin:0;padding:10px}.listPanel button{width:100%;height:34px;border:0;background:transparent;color:#dfbd82;display:grid;grid-template-columns:58px 1fr 50px 30px;align-items:center;text-align:left;font:1em Georgia;cursor:pointer}.listPanel button:hover{background:#a16c1b18}.listPanel button b{border:1px solid #b17a31;border-radius:99px;padding:2px 5px;text-align:center}.listPanel button strong,.listPanel button em{text-align:center}.listPanel footer{border-top:1px solid #624621;padding:8px;color:#b89459}.skillPanel>div{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-flow:column;grid-template-rows:repeat(6,34px)}.skillPanel button{grid-template-columns:1fr 45px 26px}.skillPanel button span i{font-style:normal;color:#a87c42}
 .editorShade{position:fixed;inset:0;background:#000b;display:grid;place-items:center;z-index:20;backdrop-filter:blur(4px)}.valueEditor{width:min(440px,90vw);padding:28px;border:1px solid #d19b46;background:linear-gradient(145deg,#0d1d26,#050a0d);box-shadow:0 25px 80px #000;text-align:center;border-radius:8px}.valueEditor>span{font-size:.75em;letter-spacing:.18em}.valueEditor h2{font-weight:400;font-size:2em;margin:8px}.valueEditor>div{display:grid;grid-template-columns:72px 1fr 72px;align-items:center;gap:12px}.valueEditor>div button{height:64px;border:1px solid #9d7238;background:#18242a;color:#edca8a;font-size:2em;border-radius:5px}.valueEditor strong{font-size:4em;font-weight:400}.confirmValue{width:100%;height:52px;margin-top:18px;background:#6b4b1c;border:1px solid #e1b35c;color:#ffe0a0;font:1.15em Georgia;border-radius:5px}.tabletStats button:focus-visible{outline:2px solid #f0cf78;outline-offset:2px}
 @media(max-width:1050px){.rpgNav{grid-template-columns:52px repeat(6,1fr) 52px;height:62px}.rpgNav button{font-size:.85em;gap:5px}.abilityCard{height:170px}.abilityCard strong{font-size:3em}.abilityCard small{display:none}.combatStrip{grid-template-columns:repeat(3,1fr)}.hpPanel{grid-column:span 2}.tempPanel{grid-column:span 1}.lowerGrid{grid-template-columns:1fr}.skillPanel>div{grid-template-columns:repeat(3,1fr)}.tabletBody{min-width:780px}.tabletStats{overflow-x:auto}}
+
+/* Einheitliches, tabletfreundliches Kartenraster */
+.abilityCard,.smallStat,.hpPanel,.tempPanel,.hpSlider,.listPanel{
+  border-color:#8f6734;
+  background-image:linear-gradient(145deg,#0b1920f2,#050b0f 72%);
+  box-shadow:inset 0 0 0 2px #05090b,inset 0 0 22px #000b,0 4px 12px #0007;
+}
+.abilityCard,.smallStat,.tempPanel{overflow:hidden}
+.abilityCard{height:194px;padding:16px 12px 12px}
+.abilityName{min-height:34px;margin:0 28px 0 42px;display:flex;align-items:flex-start;justify-content:center;font-size:clamp(.72em,.82vw,.9em);line-height:1.12;letter-spacing:.025em}
+.abilityIcon{left:15px;top:13px;font-size:2.15em}
+.abilityCard>i{right:11px;top:8px}
+.abilityCard strong{margin-top:8px;font-size:3.75em}
+.abilityCard em{margin-top:7px}
+.abilityCard small{margin-top:5px;color:#b99a6b}
+
+.smallStat{min-width:0;grid-template-columns:56px minmax(0,1fr);grid-template-rows:42px 1fr;padding:7px 12px 7px 8px;text-align:left}
+.smallStat>span{font-size:2.35em;text-align:center}
+.smallStat label{min-width:0;padding:4px 22px 0 0;align-self:start;font-size:.78em;line-height:1.12;letter-spacing:.025em;overflow-wrap:anywhere}
+.smallStat strong{align-self:center;font-size:2.35em;text-align:left;line-height:1}
+.smallStat>i{right:8px;top:50%;transform:translateY(-50%);font-size:1.7em}
+
+.hpPanel{min-width:0;padding:12px 16px}
+.heart{flex:0 0 auto;font-size:3.25em;margin-right:14px}
+.hpPanel>div{min-width:0}
+.hpPanel label,.tempPanel label{font-size:.78em;line-height:1.14;letter-spacing:.035em}
+.hpPanel button{display:flex;align-items:baseline;gap:7px;min-height:43px;white-space:nowrap}
+.hpPanel button strong{font-size:2.25em;line-height:1}
+.hpPanel button span{font-size:1.05em;color:#a98b63}
+.hpTrack{margin-top:4px}
+.tempPanel{grid-template-columns:50px minmax(0,1fr);grid-template-rows:38px 36px 27px;padding:6px 12px 6px 6px}
+.tempPanel>span{font-size:2.2em}
+.tempPanel label{padding-top:6px;overflow-wrap:anywhere}
+.tempPanel strong{font-size:2.05em;line-height:1}
+.tempPanel small{font-size:.69em;line-height:1.1;white-space:normal}
+
+.hpSlider{min-height:48px;grid-template-columns:minmax(150px,auto) minmax(180px,1fr) 46px minmax(190px,auto);padding:8px 16px;gap:14px}
+.hpSlider label{font-size:.78em;line-height:1.15;letter-spacing:.03em}
+.hpSlider span{line-height:1.15;text-align:right}
+.magicStrip{grid-template-columns:repeat(5,minmax(0,1fr))}
+.magicStrip .smallStat{min-height:92px;grid-template-columns:54px minmax(0,1fr)}
+.magicStrip .smallStat strong{font-size:2.05em}
+
+.listPanel{padding:0 14px 10px;overflow:hidden}
+.listPanel h2{padding:11px 8px 9px;letter-spacing:.06em}
+.listPanel button{min-width:0;padding:0 5px;column-gap:5px}
+.listPanel button span{min-width:0;line-height:1.08}
+.skillPanel button{grid-template-columns:minmax(0,1fr) 42px 24px;font-size:.92em}
+.skillPanel button span{padding-right:4px}
+
+@media(max-width:1050px){
+  .abilityName{font-size:.75em;margin-left:38px;margin-right:24px}
+  .smallStat{grid-template-columns:50px minmax(0,1fr)}
+  .magicStrip{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .hpSlider{grid-template-columns:160px minmax(180px,1fr) 42px 210px}
+}
