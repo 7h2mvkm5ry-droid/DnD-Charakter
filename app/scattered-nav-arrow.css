@@ -13,6 +13,9 @@
 }
 
 .combatPointer{
+  position:absolute;
+  z-index:5;
+  display:block;
   left:4.25%;
   bottom:calc(3.2% + 174px);
   width:118px;
