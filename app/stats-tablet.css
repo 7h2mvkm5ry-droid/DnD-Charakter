@@ -50,14 +50,15 @@
 .magicStrip .smallStat strong{font-size:2.05em}
 
 .listPanel{padding:0 14px 10px;overflow:hidden}
-.listPanel h2{padding:11px 8px 9px;letter-spacing:.06em}
-.listPanel button{min-width:0;height:40px;padding:0 6px;column-gap:6px;font-size:1.08em}
+.listPanel h2{padding:13px 8px 11px;font-size:clamp(19px,1.45vw,23px);letter-spacing:.065em}
+.listPanel button{min-width:0;height:48px;padding:0 7px;column-gap:7px;font-size:clamp(17px,1.28vw,21px)}
 .listPanel button span{min-width:0;line-height:1.08}
-.listPanel button strong{font-size:1.1em}
-.listPanel button em{font-size:1.05em}
-.listPanel footer{font-size:1.02em}
-.skillPanel>div{grid-template-rows:repeat(6,40px)}
-.skillPanel button{grid-template-columns:minmax(0,1fr) 46px 26px;font-size:1em}
+.listPanel button b{font-size:.82em;padding:3px 6px}
+.listPanel button strong{font-size:1.22em;font-weight:600}
+.listPanel button em{font-size:1.18em}
+.listPanel footer{font-size:clamp(15px,1.05vw,18px);padding:11px 8px}
+.skillPanel>div{grid-template-rows:repeat(6,48px)}
+.skillPanel button{grid-template-columns:minmax(0,1fr) 52px 30px}
 .skillPanel button span{padding-right:4px}
 
 @media(max-width:1050px){
