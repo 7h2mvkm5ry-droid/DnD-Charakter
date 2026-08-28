@@ -139,6 +139,38 @@
 }
 .statsCombatLaunch i{font-style:normal;font-size:28px;line-height:.7;color:#d9a44e}
 
+.combatStrip .primaryCombatStat{
+  grid-template-columns:minmax(0,1fr);
+  grid-template-rows:34px 1fr;
+  padding:10px 14px;
+  text-align:left;
+}
+.combatStrip .primaryCombatStat label,
+.combatStrip .hpLabel,
+.combatStrip .tempPanel label{
+  display:block;
+  margin:0;
+  padding:0;
+  color:#e6c895;
+  font:600 clamp(13px,.92vw,15px)/1.15 'Palatino Linotype',Palatino,Georgia,serif;
+  letter-spacing:.045em;
+  text-transform:uppercase;
+  text-align:left;
+  white-space:nowrap;
+}
+.combatStrip .primaryCombatStat strong{align-self:center;text-align:left;font-size:2.25em}
+.combatStrip .primaryCombatStat>i{top:50%}
+.combatStrip .hpPanel{padding:10px 14px}
+.combatStrip .tempPanel{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  grid-template-rows:30px 34px 24px;
+  padding:10px 14px 7px;
+  text-align:left;
+}
+.combatStrip .tempPanel strong{font-size:2.1em;text-align:left}
+.combatStrip .tempPanel small{text-align:left}
+
 @media(max-width:1050px){
   .tabletBody{max-width:980px;padding-inline:14px}
   .abilityCard{height:164px;grid-template-columns:58px minmax(0,1fr)}
