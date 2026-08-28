@@ -1,0 +1,17 @@
+.itemsPage{position:relative;min-width:900px;min-height:100svh;overflow:hidden;background:#1598db;color:#26190d;font-family:'Palatino Linotype',Palatino,Georgia,serif}
+.itemsBackdrop{position:absolute;inset:0;background:linear-gradient(#0787d1,#8bd7ed 60%,#c9b66e);filter:saturate(.82)}
+.itemsCanvas{position:absolute;left:50%;top:50%;width:min(100vw,133.333svh);height:min(100svh,75vw);transform:translate(-50%,-50%);filter:drop-shadow(0 0 18px #09283999)}
+.itemsCanvas>img{display:block;width:100%;height:100%;object-fit:fill}
+.itemsNav{position:absolute;z-index:12;top:0;left:0;right:0;height:100px;display:grid;place-items:center;background:linear-gradient(180deg,#061017e8,#0610179c 72%,transparent)}
+.itemsNav .floatingFantasyNav{width:min(70vw,740px)}
+.itemNumber{position:absolute;z-index:4;min-width:2.35%;height:3.35%;padding:0 3px;border:1px solid #765026;background:linear-gradient(#ecd39b,#d8b876);color:#17110b;cursor:pointer;font:800 clamp(12px,1.15vw,20px)/1 'Palatino Linotype',Palatino,Georgia,serif;box-shadow:inset 0 0 5px #9d6a2d66,0 1px 2px #0006;transform:rotate(-1deg)}
+.itemNumber:hover,.itemNumber:focus-visible{border-color:#2d1708;background:#f4dfa9;outline:2px solid #fff0b6;outline-offset:1px}
+.torches{left:76.8%;top:17.3%}.days{left:83.1%;top:23.7%}.liters{left:77.1%;top:30.2%}.rope{left:77%;top:39.4%}.potions{left:77%;top:48%}.drops{left:77%;top:55.4%}.drop-minutes{left:86.6%;top:58.4%}.healing{left:77%;top:64%}.healing-die{left:88.3%;top:64%}.luck-stone{left:77.2%;top:85.1%}
+.itemsSession{position:absolute;z-index:5;left:3.7%;top:61.2%;width:22.6%;height:28.5%;padding:2.4% 2.1% 1.5%;transform:rotate(-.4deg);color:#3a2615}
+.itemsSession h2{margin:0 0 2%;text-align:center;font:800 clamp(14px,1.45vw,23px)/1 'Palatino Linotype',Palatino,Georgia,serif;letter-spacing:.06em;font-variant:small-caps}
+.itemsSession textarea{display:block;width:100%;height:58%;resize:none;border:0;border-bottom:1px solid #70492080;outline:0;background:repeating-linear-gradient(transparent 0,transparent 21px,#805a3230 22px);color:#3a2615;font:italic clamp(11px,1vw,16px)/22px 'Palatino Linotype',Palatino,Georgia,serif}
+.itemsSession button{display:block;margin:4% auto 0;border:1px solid #765027;background:#4f2d18;color:#efd89d;padding:5px 12px;cursor:pointer;font:700 clamp(9px,.72vw,12px) 'Palatino Linotype',Palatino,Georgia,serif;box-shadow:inset 0 0 7px #160b06}
+.itemEditorShade{position:fixed;z-index:30;inset:0;display:grid;place-items:center;background:#020508bd;backdrop-filter:blur(5px)}
+.itemEditor{min-width:330px;padding:28px;text-align:center;border:1px solid #b7823c;background:linear-gradient(145deg,#251914,#080b0d);color:#efd59a;box-shadow:inset 0 0 0 3px #050505,inset 0 0 0 4px #6b4724,0 18px 60px #000}
+.itemEditor>span{color:#b98748;font-size:10px;letter-spacing:.16em}.itemEditor h2{margin:8px 0 22px;font:700 25px 'Palatino Linotype',Palatino,Georgia,serif}.itemEditor>div{display:grid;grid-template-columns:58px 1fr 58px;align-items:center;gap:15px}.itemEditor>div button{height:54px;border:1px solid #a67536;background:#11181b;color:#efc978;font-size:30px;cursor:pointer}.itemEditor strong{font:700 42px Georgia,serif}.saveItemValue{margin-top:22px;border:1px solid #b47f39;background:#55301a;color:#f1d18e;padding:10px 22px;cursor:pointer;font-weight:700}
+@media(max-width:1050px){.itemsNav{height:88px}.itemsNav .floatingFantasyNav{width:min(72vw,650px)}.itemNumber{font-size:12px}.itemsSession button{padding:4px 8px}}
