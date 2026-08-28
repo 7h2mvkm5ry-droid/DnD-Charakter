@@ -10,12 +10,12 @@
 .weaponNote h2{margin:0 0 3px;color:#e5b866;font:700 clamp(16px,1.45vw,24px)/1.05 'Palatino Linotype',Palatino,Georgia,serif;letter-spacing:.055em;font-variant:small-caps}
 .weaponNote p{margin:1px 0;font:600 clamp(11px,.9vw,15px)/1.18 'Palatino Linotype',Palatino,Georgia,serif;letter-spacing:.015em}
 .silver{left:14%;top:19%}
-.ring{left:14%;top:38%;transform:translateX(-3cm);background:none!important;box-shadow:none!important}
-.armor{left:14%;top:63%}
-.spears{left:63%;right:auto;top:24%;text-align:left}
+.ring{left:14%;top:38%;transform:translateX(-1cm);background:none!important;box-shadow:none!important}
+.armor{left:14%;top:63%;transform:translateX(2cm)}
+.spears{left:63%;right:auto;top:24%;transform:translateX(-1cm);text-align:left}
 .bracelet{right:13%;top:39%;transform:translateX(-3cm);text-align:right}
-.old-sword{right:13%;top:77%;text-align:right}
-.stone{left:50%;top:54%;transform:translateX(-50%);text-align:center}
+.old-sword{right:13%;top:77%;transform:translateX(-1cm);text-align:right}
+.stone{left:50%;top:54%;transform:translateX(calc(-50% - 1cm));text-align:center}
 @media(max-width:1050px){.weaponsNav{height:96px}.weaponsTitle{top:98px}.weaponNote{max-width:27vw}.weaponNote p{font-size:11px}.silver,.ring,.armor{left:11%}.spears{left:63%;right:auto}.bracelet,.old-sword{right:10%}}
 @media(max-aspect-ratio:4/3){.weaponsPage{min-width:940px}.weaponsArt{object-position:center}.weaponsTitle{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.weaponsPage *{transition:none!important}}
