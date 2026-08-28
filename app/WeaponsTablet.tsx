@@ -30,7 +30,7 @@ export default function WeaponsTablet({onBack,onNavigate}:{onBack:()=>void;onNav
     </section>
     <section className="sessionParchment" aria-label="Notiz für diese Session">
       <h2>Diese Session</h2>
-      <textarea value={sessionNote} onChange={event=>{setSessionNote(event.target.value);setSaved(false)}} placeholder="Was geschieht in dieser Session?" aria-label="Session-Notiz" />
+      <textarea value={sessionNote} onChange={event=>{setSessionNote(event.target.value);setSaved(false)}} aria-label="Session-Notiz" />
       <button onClick={saveSessionNote}>{saved?'✓ Gespeichert':'Notiz speichern'}</button>
     </section>
   </main>;
