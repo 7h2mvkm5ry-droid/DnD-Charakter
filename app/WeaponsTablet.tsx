@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import FantasyNav, { FantasyTarget } from './FantasyNav';
 import './weapons-tablet.css';
 import './unified-fantasy-nav.css';
@@ -15,6 +16,10 @@ const notes = [
 ];
 
 export default function WeaponsTablet({onBack,onNavigate}:{onBack:()=>void;onNavigate:(target:FantasyTarget)=>void}) {
+  const [sessionNote,setSessionNote]=useState('');
+  const [saved,setSaved]=useState(false);
+  useEffect(()=>{setSessionNote(localStorage.getItem('thartos-session-note')||'')},[]);
+  const saveSessionNote=()=>{localStorage.setItem('thartos-session-note',sessionNote);setSaved(true);window.setTimeout(()=>setSaved(false),1800)};
   return <main className="weaponsPage">
     <img className="weaponsArt" src="/thartos-waffen.png" alt="Thartos in Kettenrüstung mit zwei Schwertern, Speeren, Ring, Armreif und heiligem Stein" />
     <div className="weaponsShade" aria-hidden="true" />
@@ -22,6 +27,11 @@ export default function WeaponsTablet({onBack,onNavigate}:{onBack:()=>void;onNav
     <h1 className="weaponsTitle">THARTOS <span>· WAFFEN &amp; RÜSTUNG ·</span></h1>
     <section className="weaponAnnotations" aria-label="Waffen und Ausrüstung">
       {notes.map(note=><article className={`weaponNote ${note.id}`} key={note.id}><h2>{note.title}</h2>{note.lines.map(line=><p key={line}>{line}</p>)}</article>)}
+    </section>
+    <section className="sessionParchment" aria-label="Notiz für diese Session">
+      <h2>Diese Session</h2>
+      <textarea value={sessionNote} onChange={event=>{setSessionNote(event.target.value);setSaved(false)}} placeholder="Was geschieht in dieser Session?" aria-label="Session-Notiz" />
+      <button onClick={saveSessionNote}>{saved?'✓ Gespeichert':'Notiz speichern'}</button>
     </section>
   </main>;
 }
