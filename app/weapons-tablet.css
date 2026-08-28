@@ -15,7 +15,7 @@
 .spears{left:63%;right:auto;top:24%;text-align:left}
 .bracelet{right:13%;top:39%;text-align:right}
 .old-sword{right:13%;top:77%;text-align:right}
-.stone{left:59%;top:49%}
+.stone{left:50%;top:54%;transform:translateX(-50%);text-align:center}
 @media(max-width:1050px){.weaponsNav{height:96px}.weaponsTitle{top:98px}.weaponNote{max-width:27vw}.weaponNote p{font-size:11px}.silver,.ring,.armor{left:11%}.spears{left:63%;right:auto}.bracelet,.old-sword{right:10%}}
 @media(max-aspect-ratio:4/3){.weaponsPage{min-width:940px}.weaponsArt{object-position:center}.weaponsTitle{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.weaponsPage *{transition:none!important}}
