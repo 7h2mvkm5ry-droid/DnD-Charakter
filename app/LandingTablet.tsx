@@ -22,7 +22,7 @@ export default function LandingTablet({ onNavigate }: { onNavigate: (tab: Tab) =
   };
 
   return <main className="tabletLanding">
-    <img className="landingArt" src="/thartos-startseite.png" alt="Thartos kämpft in einer nächtlichen Stadt gegen Untote" />
+    <img className="landingArt" src="/thartos-startseite.png" alt="Thartos und seine Gefährten kämpfen in einer lebhaften Stadt gegen Orks" />
     <div className="landingVeil" />
     <header className="landingNav">
       <FantasyNav onSelect={(target)=>onNavigate(target==='Stats'?'Übersicht':target)} />
@@ -31,7 +31,7 @@ export default function LandingTablet({ onNavigate }: { onNavigate: (tab: Tab) =
     <div className="combatPointer" aria-hidden="true"><img src="/kampf-pfeil.png" alt="" /></div>
     <section className="landingFooter" aria-label="Charakter und Rast">
       <div className="fightLaunch">
-        <button className="portraitMedallion" onClick={() => onNavigate('Kampf')} aria-label="In den Kampf"><img src="/thartos-startseite.png" alt="Thartos" /><span aria-hidden="true">⚔</span></button>
+        <button className="portraitMedallion" onClick={() => onNavigate('Kampf')} aria-label="In den Kampf"><img src="/thartos-portrait.png" alt="Thartos" /><span aria-hidden="true">⚔</span></button>
       </div>
       <div className="landingIdentity">
         <h1>THARTOS</h1>
