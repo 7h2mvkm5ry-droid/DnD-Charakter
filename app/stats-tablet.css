@@ -171,6 +171,17 @@
 .combatStrip .tempPanel strong{font-size:2.1em;text-align:left}
 .combatStrip .tempPanel small{text-align:left}
 
+.magicStrip{
+  grid-template-columns:minmax(0,1.12fr) minmax(0,1.48fr) minmax(0,.92fr) minmax(0,1.28fr);
+}
+.magicStrip .wide{grid-column:span 1}
+.magicStrip .smallStat label{
+  white-space:nowrap;
+  overflow-wrap:normal;
+  font-size:clamp(11px,.78vw,13px);
+  letter-spacing:.015em;
+}
+
 @media(max-width:1050px){
   .tabletBody{max-width:980px;padding-inline:14px}
   .abilityCard{height:164px;grid-template-columns:58px minmax(0,1fr)}
