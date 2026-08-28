@@ -5,7 +5,7 @@ import './landing-reference-tabs.css';
 import './landing-overlay-nav.css';
 import FantasyNav from './FantasyNav';
 
-type Tab = 'Übersicht' | 'Kampf' | 'Zauber' | 'Inventar' | 'Notizen';
+type Tab = 'Übersicht' | 'Waffen' | 'Kampf' | 'Zauber' | 'Inventar' | 'Notizen';
 
 export default function LandingTablet({ onNavigate }: { onNavigate: (tab: Tab) => void }) {
   const [notice, setNotice] = useState('');

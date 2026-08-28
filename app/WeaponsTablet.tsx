@@ -1,0 +1,27 @@
+'use client';
+
+import FantasyNav, { FantasyTarget } from './FantasyNav';
+import './weapons-tablet.css';
+import './unified-fantasy-nav.css';
+
+const notes = [
+  { id: 'silver', title: 'Silberschwert', lines: ['1W8 +0 · Aktionsbonus +2', '+1 auf Trefferwürfe', '+1 auf Charismawürfe bei Oberschicht'] },
+  { id: 'old-sword', title: 'Sebrus altes Langschwert', lines: ['1W8 +0 · Aktionsbonus +2'] },
+  { id: 'bracelet', title: 'Wabernder Armreif', lines: ['Bonusaktion · 1/Tag', 'Im Schatten einer Person im Umkreis', 'von 30 m auftauchen'] },
+  { id: 'ring', title: 'Ring', lines: ['Fluch: Jeder 4. Treffer misslingt', 'automatisch. Er kann nicht', 'ausgelassen werden.'] },
+  { id: 'spears', title: '5 Speere', lines: ['1W6 bei Wurf · 1W8 bei Stoß', 'Aktionsbonus +4'] },
+  { id: 'armor', title: 'Kettenrüstung', lines: ['Starker Schutz und', 'gute Beweglichkeit'] },
+  { id: 'stone', title: 'Heiliger Stein', lines: ['Stärkt seinen Glauben und hilft', 'beim Zauberwirken', 'Inschrift unbekannt'] },
+];
+
+export default function WeaponsTablet({onBack,onNavigate}:{onBack:()=>void;onNavigate:(target:FantasyTarget)=>void}) {
+  return <main className="weaponsPage">
+    <img className="weaponsArt" src="/thartos-waffen.png" alt="Thartos in Kettenrüstung mit zwei Schwertern, Speeren, Ring, Armreif und heiligem Stein" />
+    <div className="weaponsShade" aria-hidden="true" />
+    <header className="weaponsNav"><button className="statsBack" onClick={onBack} aria-label="Zur Startseite">‹</button><FantasyNav active="Waffen" onSelect={onNavigate}/></header>
+    <h1 className="weaponsTitle">THARTOS <span>· WAFFEN &amp; RÜSTUNG ·</span></h1>
+    <section className="weaponAnnotations" aria-label="Waffen und Ausrüstung">
+      {notes.map(note=><article className={`weaponNote ${note.id}`} key={note.id}><i aria-hidden="true"/><h2>{note.title}</h2>{note.lines.map(line=><p key={line}>{line}</p>)}</article>)}
+    </section>
+  </main>;
+}

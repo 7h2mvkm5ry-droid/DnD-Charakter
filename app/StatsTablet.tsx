@@ -4,7 +4,7 @@ import './unified-fantasy-nav.css';
 import FantasyNav from './FantasyNav';
 
 type Values=Record<string,number>;
-type Nav='Kampf'|'Inventar'|'Zauber'|'Übersicht'|'Notizen';
+type Nav='Waffen'|'Kampf'|'Inventar'|'Zauber'|'Übersicht'|'Notizen';
 const defaults:Values={str:11,dex:14,con:16,int:13,wis:9,cha:15,ac:16,initiative:2,speed:10,hp:29,hpMax:29,tempHp:5,tempHpMax:5,spellDc:12,spellAttack:4,proficiency:2,passive:9};
 const abilityMeta=[['str','Stärke','STR','str','ember'],['dex','Geschicklichkeit','DEX','dex','moss'],['con','Konstitution','CON','constitution','ocean'],['int','Intelligenz','INT','int','violet'],['wis','Weisheit','WIS','wis','umber'],['cha','Charisma','CHA','cha','gold']];
 const saves=[['str','Stärke'],['dex','Geschicklichkeit'],['con','Konstitution'],['int','Intelligenz'],['wis','Weisheit'],['cha','Charisma']];
